@@ -28,13 +28,19 @@ public class MenuActividad extends AppCompatActivity implements View.OnClickList
         
         /* Manejadores de los botones del menú principal. */
         botonJugar.setOnClickListener(this);
+        botonEstadisticas.setOnClickListener(this);
+        botonAjustes.setOnClickListener(this);
         
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.buttonJugar) {
-            this.startActivity(new Intent()); //TODO: Enlazar a la siguiente vista
+            this.startActivity(new Intent(MenuActividad.this, ActividadPrincipal.class));
+        } else if (v.getId() == R.id.buttonEstadisticas) {
+            this.startActivity(new Intent(MenuActividad.this, Resultados.class));
+        } else if (v.getId() == R.id.buttonAjustes) {
+            this.startActivity(new Intent(MenuActividad.this, Presentacion.class));
         }
     }
 }
